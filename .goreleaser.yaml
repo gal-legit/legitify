@@ -23,11 +23,6 @@ builds:
       - 'darwin_arm64'
       - 'linux_amd64'
       - 'linux_arm64'
-      - 'windows_amd64'
-      - 'windows_arm64'
-    hooks:
-      post: sh -c "if [ '{{ .Ext }}' = '.exe' ] ; then osslsigncode sign -certs /tmp/legit_signature.crt -key /tmp/legit_signature.key -in {{ .Path }} -out {{ .Path }}_signed ; rm {{ .Path }} ; mv {{ .Path }}_signed {{ .Path }} ; fi; sha256sum {{ .Path }}"
-
 
 dockers:
   -
