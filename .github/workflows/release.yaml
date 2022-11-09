@@ -32,4 +32,4 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - name: show leftovers
-        run: cd dist && sha256sum *
+        run: cd dist && find -type f -exec ls -l {} \;
