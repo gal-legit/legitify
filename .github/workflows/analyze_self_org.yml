@@ -13,4 +13,3 @@ jobs:
         uses: gal-legit/legitify@main # it is recommended to use a specific commit hash
         with:
           github_token: ${{ secrets.GAL_PAT }}
-          legitify_base_version: 100.0.0
