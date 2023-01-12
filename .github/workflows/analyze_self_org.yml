@@ -1,0 +1,16 @@
+# This is the default behavior, will analyze the organization from which the action is running from.
+name: Legitify Analyze
+on:
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Legitify Action
+        uses: gal-legit/legitify@main # it is recommended to use a specific commit hash
+        with:
+          github_token: ${{ secrets.GAL_PAT }}
+          legitify_base_version: 100.0.0
