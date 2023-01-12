@@ -43,13 +43,10 @@ async function executeLegitify(token, args) {
 
   try {
     await exec.exec('"./legitify"', ["analyze", args[0], args[1], "--output-format", "markdown"], options);
+    fs.writeFile(process.env.GITHUB_STEP_SUMMARY, myOutput)
   } catch (error) {
     core.setFailed(error);
     exit(1);
-  } finally {
-    if (myOutput !== "" ) {
-      fs.writeFile(process.env.GITHUB_STEP_SUMMARY, myOutput)
-    }
   }
 }
 
