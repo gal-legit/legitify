@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"log"
-	"os"
 
 	"github.com/Legit-Labs/legitify/internal/screen"
 	"github.com/fatih/color"
