@@ -52,7 +52,7 @@ async function executeLegitify(token, args) {
 async function fetchLegitifyReleaseUrl(baseVersion) {
   try {
     const response = await fetch(
-      "https://api.github.com/repos/Legit-Labs/legitify/releases"
+      "https://api.github.com/repos/gal-legit/legitify/releases"
     );
     if (!response.ok) {
       core.setFailed(`Failed to fetch releases: ${response.statusText}`);
