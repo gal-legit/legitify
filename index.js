@@ -40,6 +40,8 @@ async function executeLegitify(token, args) {
   };
   options.env = { GITHUB_TOKEN: token };
   options.silent = true
+  options.outStream = fs.createWriteStream("/dev/null")
+  options.errStream = fs.createWriteStream("/dev/null")
 
   try {
     await exec.exec('"./legitify"', ["analyze", args[0], args[1], "--output-format", "markdown"], options);
